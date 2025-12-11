@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="ru" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="description" content="Oil Market — магазин моторных масел премиум-класса. Синтетика, полусинтетика, минеральные масла. Современный дизайн, продвинутая фильтрация, безопасная покупка." />
+    <title>Oil Market — премиальные моторные масла</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Oil Market — премиальные моторные масла" />
+    <meta property="og:description" content="Высокотехнологичные моторные масла для современных двигателей. Удобный каталог, экспертный подбор, быстрая доставка." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:image" content="https://oilmarket.ru/og-image.jpg" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Vite entry -->
+
+    <!-- Critical CSS for initial load -->
+    <style>
+      :root {
+        --color-primary-500: #f97316;
+        --color-primary-600: #ea580c;
+        --color-secondary-500: #3b82f6;
+        --color-dark-900: #0f172a;
+        --color-dark-800: #1e293b;
+      }
+      
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      html, body, #root {
+        height: 100%;
+        overflow-x: hidden;
+      }
+      
+      body {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        background-color: var(--color-dark-900);
+        color: #f1f5f9;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      
+      /* Skeleton loading animation */
+      .skeleton {
+        background: linear-gradient(90deg, 
+          var(--color-dark-800) 25%, 
+          var(--color-dark-700) 50%, 
+          var(--color-dark-800) 75%);
+        background-size: 200% 100%;
+        animation: skeleton-loading 1.5s infinite;
+        border-radius: 6px;
+      }
+      
+      @keyframes skeleton-loading {
+        0% { background-position: 200% 0; }
+        100% { background-position: -200% 0; }
+      }
+      
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      
+      ::-webkit-scrollbar-track {
+        background: var(--color-dark-800);
+      }
+      
+      ::-webkit-scrollbar-thumb {
+        background: var(--color-primary-600);
+        border-radius: 5px;
+      }
+      
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--color-primary-500);
+      }
+      
+      /* Selection color */
+      ::-moz-selection {
+        background-color: rgba(249, 115, 22, 0.3);
+        color: white;
+      }
+      ::selection {
+        background-color: rgba(249, 115, 22, 0.3);
+        color: white;
+      }
+    </style>
+    <script type="module" crossorigin src="/oil-market/assets/index-CEKX0VM4.js"></script>
+    <link rel="stylesheet" crossorigin href="/oil-market/assets/index-Baur5JUN.css">
+  </head>
+
+  <body>
+    <!-- Loading overlay -->
+    <div id="initial-loader" style="
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--color-dark-900);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.3s ease;
+    ">
+      <div style="
+        width: 60px;
+        height: 60px;
+        border: 3px solid var(--color-dark-700);
+        border-top-color: var(--color-primary-500);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-bottom: 20px;
+      "></div>
+      <div style="color: #94a3b8; font-size: 14px;">Загрузка Oil Market...</div>
+    </div>
+
+    <script>
+      // Hide loader when page is loaded
+      window.addEventListener('load', () => {
+        const loader = document.getElementById('initial-loader');
+        if (loader) {
+          loader.style.opacity = '0';
+          setTimeout(() => loader.remove(), 300);
+        }
+      });
+      
+      // Fallback if React fails to load
+      setTimeout(() => {
+        const loader = document.getElementById('initial-loader');
+        if (loader) {
+          loader.innerHTML = `
+            <div style="text-align: center; padding: 40px;">
+              <div style="color: #ef4444; margin-bottom: 20px;">⚠️ Ошибка загрузки</div>
+              <div style="color: #94a3b8; margin-bottom: 20px;">Не удалось загрузить приложение</div>
+              <a href="/" style="color: var(--color-primary-500);">Попробовать снова</a>
+            </div>
+          `;
+        }
+      }, 10000);
+    </script>
+
+    <!-- React mount point -->
+    <main id="root" role="main"></main>
+
+    <!-- No script fallback -->
+    <noscript>
+      <div style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--color-dark-900);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px;
+        text-align: center;
+        z-index: 10000;
+      ">
+        <div>
+          <h1 style="color: var(--color-primary-500); margin-bottom: 20px;">Oil Market</h1>
+          <p style="margin-bottom: 20px; color: #94a3b8;">
+            Для работы сайта требуется JavaScript. Пожалуйста, включите его в настройках браузера.
+          </p>
+          <p style="color: #64748b; font-size: 14px;">
+            Магазин моторного масла «Oil Market»<br>
+            ул. Дзержинского, 4, стр. 7, Большой Камень<br>
+            Тел: <a href="tel:+79502865525" style="color: var(--color-primary-500);">+7 950 286 55 25</a>
+          </p>
+        </div>
+      </div>
+    </noscript>
+  </body>
+</html>
